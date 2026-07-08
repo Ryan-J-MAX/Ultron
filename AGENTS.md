@@ -128,6 +128,44 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
 
+## 📖 Dialogue Reading Protocol
+
+当触发读书场景（用户说"来读这本书"、"一起读"、"讨论这本书"、"开始读书"、"继续读XX书"或直接发送文件路径/书名）时，必须严格按照以下流程执行，**不跳过步骤，不自己加步骤，不自己发挥**：
+
+### 第1步：建立上下文
+1. 确认书名、作者、字数、章节结构
+2. 了解读者背景和当前阶段
+3. 告知用户全书规模和阅读计划
+
+### 第2步：逐章推进
+每章节奏：
+1. 通读原文（100%尽力，完整覆盖）
+2. 提取核心框架（3-5个要点）
+3. 关键概念/故事（选1-2个）
+4. 对照读者现实（表格对比 ✅ ⚠️ ❌）
+5. 练习/填空（如有，等用户输入，不替用户填）
+
+### 第3步：讨论延伸
+- 允许偏离书中内容，讨论真实困惑
+- 用书中框架回答问题
+
+### 第4步：收尾
+1. 结构化笔记 → `book-notes/书名/notes-YYYY-MM-DD.md`
+2. 完整对话记录 → 用 export-session 导出，超过20000字自动切分
+3. TODO清单 → `book-notes/TODO.md`
+4. 清理临时文件
+
+### 输出风格
+- 直接，不废话
+- 对比表格优先
+- 说"你"不是说"读者"
+- 一章不超过一屏
+
+### 关键约束
+- **不代替用户思考** — 提取框架和原文细节，不替用户下结论
+- **不跳过通读** — 读者已掌握的章节可以快速掠过，但不能跳过
+- **严格按步骤走** — 不提前做后面的步骤，不加步骤
+
 **🎭 Voice Storytelling:** If you have `sag` (ElevenLabs TTS), use voice for stories, movie summaries, and "storytime" moments! Way more engaging than walls of text. Surprise people with funny voices.
 
 **📝 Platform Formatting:**

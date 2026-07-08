@@ -1,0 +1,4 @@
+# 不要在 GitHub 上暴露密钥
+*secret*
+*api_key*
+*.key

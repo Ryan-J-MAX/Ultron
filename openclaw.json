@@ -1,0 +1,380 @@
+{
+  "tools": {
+    "web": {
+      "search": {
+        "provider": "duckduckgo"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "volcengine-plan": {
+        "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "apiKey": "***REMOVED***",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "ark-code-latest",
+            "name": "ark-code-latest",
+            "contextWindow": 256000,
+            "maxTokens": 32000,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "doubao-seed-code",
+            "name": "doubao-seed-code",
+            "contextWindow": 256000,
+            "maxTokens": 32000,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "glm-5.2",
+            "name": "glm-5.2",
+            "contextWindow": 1024000,
+            "maxTokens": 65536,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "glm-latest",
+            "name": "glm-latest",
+            "contextWindow": 1024000,
+            "maxTokens": 65536,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "deepseek-v4-flash",
+            "name": "deepseek-v4-flash",
+            "contextWindow": 1024000,
+            "maxTokens": 65536,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "deepseek-v4-pro",
+            "name": "deepseek-v4-pro",
+            "contextWindow": 1024000,
+            "maxTokens": 65536,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "doubao-seed-2.0-code",
+            "name": "doubao-seed-2.0-code",
+            "contextWindow": 256000,
+            "maxTokens": 65536,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "doubao-seed-2.0-pro",
+            "name": "doubao-seed-2.0-pro",
+            "contextWindow": 256000,
+            "maxTokens": 65536,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "doubao-seed-2.0-lite",
+            "name": "doubao-seed-2.0-lite",
+            "contextWindow": 256000,
+            "maxTokens": 65536,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "minimax-m2.7",
+            "name": "minimax-m2.7",
+            "contextWindow": 200000,
+            "maxTokens": 65536,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "minimax-m3",
+            "name": "minimax-m3",
+            "contextWindow": 512000,
+            "maxTokens": 65536,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "kimi-k2.6",
+            "name": "kimi-k2.6",
+            "contextWindow": 256000,
+            "maxTokens": 32000,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "kimi-k2.7-code",
+            "name": "kimi-k2.7-code",
+            "contextWindow": 256000,
+            "maxTokens": 32000,
+            "input": [
+              "text"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "volcengine-plan/ark-code-latest"
+      },
+      "models": {
+        "volcengine-plan/ark-code-latest": {},
+        "volcengine-plan/doubao-seed-2.0-code": {},
+        "volcengine-plan/doubao-seed-2.0-pro": {},
+        "volcengine-plan/doubao-seed-2.0-lite": {},
+        "volcengine-plan/doubao-seed-code": {},
+        "volcengine-plan/glm-5.2": {},
+        "volcengine-plan/glm-latest": {},
+        "volcengine-plan/minimax-m2.7": {},
+        "volcengine-plan/minimax-m3": {},
+        "volcengine-plan/kimi-k2.6": {},
+        "volcengine-plan/kimi-k2.7-code": {},
+        "volcengine-plan/deepseek-v4-flash": {},
+        "volcengine-plan/deepseek-v4-pro": {}
+      },
+      "memorySearch": {
+        "enabled": true,
+        "provider": "openai-compatible",
+        "model": "doubao-embedding-vision",
+        "remote": {
+          "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
+          "apiKey": "***REMOVED***"
+        },
+        "experimental": {
+          "sessionMemory": true
+        }
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "***REMOVED***"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "volcengine": {
+        "enabled": true
+      },
+      "openclaw-weixin": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": true
+      },
+      "browser": {
+        "enabled": true
+      },
+      "active-memory": {
+        "enabled": true,
+        "config": {
+          "enabled": true,
+          "agents": ["main"],
+          "queryMode": "recent",
+          "promptStyle": "balanced",
+          "timeoutMs": 15000,
+          "maxSummaryChars": 220,
+          "logging": true
+        }
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-07-07T06:25:53.618Z",
+    "lastRunVersion": "2026.6.11",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.6.11",
+    "lastTouchedAt": "2026-07-07T06:26:10.625Z"
+  },
+  "channels": {
+    "openclaw-weixin": {
+      "channelConfigUpdatedAt": "2026-07-02T09:24:08.847Z",
+      "enabled": true
+    },
+    "feishu": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "groupPolicy": "open",
+      "appId": "cli_aacc8e079b39dbe9",
+      "appSecret": "***REMOVED***",
+      "allowFrom": [
+        "ou_f3710dc92ad48ad68073db705ff0f713"
+      ],
+      "requireMention": true,
+      "groupAllowFrom": [
+        "ou_f3710dc92ad48ad68073db705ff0f713"
+      ]
+    }
+  },
+  "browser": {
+    "extraArgs": [
+      "--proxy-server=socks5://127.0.0.1:9674"
+    ],
+    "ssrfPolicy": {
+      "allowedHostnames": [
+        "google.com",
+        "www.google.com",
+        "google.com.hk",
+        "news.google.com"
+      ],
+      "dangerouslyAllowPrivateNetwork": true
+    }
+  },
+  "skills": {
+    "entries": {
+      "1password": {
+        "enabled": false
+      },
+      "apple-notes": {
+        "enabled": false
+      },
+      "apple-reminders": {
+        "enabled": false
+      },
+      "bear-notes": {
+        "enabled": false
+      },
+      "blogwatcher": {
+        "enabled": false
+      },
+      "blucli": {
+        "enabled": false
+      },
+      "camsnap": {
+        "enabled": false
+      },
+      "coding-agent": {
+        "enabled": false
+      },
+      "eightctl": {
+        "enabled": false
+      },
+      "gemini": {
+        "enabled": false
+      },
+      "gifgrep": {
+        "enabled": false
+      },
+      "gog": {
+        "enabled": false
+      },
+      "goplaces": {
+        "enabled": false
+      },
+      "himalaya": {
+        "enabled": false
+      },
+      "imsg": {
+        "enabled": false
+      },
+      "mcporter": {
+        "enabled": false
+      },
+      "model-usage": {
+        "enabled": false
+      },
+      "nano-pdf": {
+        "enabled": false
+      },
+      "obsidian": {
+        "enabled": false
+      },
+      "openai-whisper": {
+        "enabled": false
+      },
+      "openai-whisper-api": {
+        "enabled": false
+      },
+      "openhue": {
+        "enabled": false
+      },
+      "oracle": {
+        "enabled": false
+      },
+      "ordercli": {
+        "enabled": false
+      },
+      "peekaboo": {
+        "enabled": false
+      },
+      "sag": {
+        "enabled": false
+      },
+      "session-logs": {
+        "enabled": false
+      },
+      "sherpa-onnx-tts": {
+        "enabled": false
+      },
+      "songsee": {
+        "enabled": false
+      },
+      "sonoscli": {
+        "enabled": false
+      },
+      "spotify-player": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "things-mac": {
+        "enabled": false
+      },
+      "tmux": {
+        "enabled": false
+      },
+      "trello": {
+        "enabled": false
+      },
+      "xurl": {
+        "enabled": false
+      }
+    }
+  },
+  "mcp": {
+    "servers": {
+      "mem0": {
+        "command": "python3",
+        "args": ["/Users/construct/.openclaw/workspace/mem0_cli.py"],
+        "env": {
+          "POSTHOG_DISABLED": "1"
+        }
+      }
+    }
+  }
+}
