@@ -28,14 +28,16 @@ cp "$WORKSPACE/AGENTS.md" "$REPO_DIR/AGENTS.md" 2>/dev/null || true
 cp "$WORKSPACE/USER.md" "$REPO_DIR/USER.md" 2>/dev/null || true
 cp "$WORKSPACE/TOOLS.md" "$REPO_DIR/TOOLS.md" 2>/dev/null || true
 cp "$WORKSPACE/HEARTBEAT.md" "$REPO_DIR/HEARTBEAT.md" 2>/dev/null || true
+cp "$WORKSPACE/RECOVERY.md" "$REPO_DIR/RECOVERY.md" 2>/dev/null || true
 
 # 同步 memory 目录
 rm -rf "$REPO_DIR/memory"
 cp -r "$WORKSPACE/memory" "$REPO_DIR/memory"
 
-# 同步 Mem0 向量数据
-rm -rf "$REPO_DIR/mem0_qdrant"
-cp -r "$MEM0_DATA" "$REPO_DIR/mem0_qdrant" 2>/dev/null || true
+# 同步 Mem0 向量数据（太大，只在第一次手动备份时做一次）
+# 日常定时备份跳过，避免超时
+# rm -rf "$REPO_DIR/mem0_qdrant"
+# cp -r "$MEM0_DATA" "$REPO_DIR/mem0_qdrant" 2>/dev/null || true
 
 # 同步工具脚本
 cp "$WORKSPACE/mem0_cli.py" "$REPO_DIR/mem0_cli.py" 2>/dev/null || true
