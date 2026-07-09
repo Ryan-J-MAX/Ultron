@@ -61,6 +61,9 @@ cat > "$REPO_DIR/.gitignore" << 'EOF'
 *.key
 EOF
 
+# 设置代理（国内访问 GitHub）
+git config --local http.proxy socks5://127.0.0.1:9674 2>/dev/null || true
+
 # Git 提交
 git add -A
 

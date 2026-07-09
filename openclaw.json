@@ -172,6 +172,9 @@
         "experimental": {
           "sessionMemory": true
         }
+      },
+      "subagents": {
+        "model": "volcengine-plan/deepseek-v4-flash"
       }
     }
   },
@@ -200,7 +203,9 @@
         "enabled": true,
         "config": {
           "enabled": true,
-          "agents": ["main"],
+          "agents": [
+            "main"
+          ],
           "queryMode": "recent",
           "promptStyle": "balanced",
           "timeoutMs": 15000,
@@ -370,7 +375,9 @@
     "servers": {
       "mem0": {
         "command": "python3",
-        "args": ["/Users/construct/.openclaw/workspace/mem0_cli.py"],
+        "args": [
+          "/Users/construct/.openclaw/workspace/mem0_cli.py"
+        ],
         "env": {
           "POSTHOG_DISABLED": "1"
         }
