@@ -103,3 +103,34 @@
 - 7月13日讨论 SEO 原理并确认接受 3-6 个月起步周期
 - 7月13日确认无服务器/域名，Vercel 免费部署可行，有香港银行卡
 - 7月15日转向讨论"舔狗判断"工具的 MVP 改进（用户导出聊天记录路径）\n\n### 待执行\n- 出海站第一个工具方向拟为：数据工具站（CSV/JSON 转换、SQL格式化、数据可视化等）\n- 需要 Ryan 确认具体工具方向后开始写代码部署\n- 舔狗判断工具：需要加导出引导 + 智能格式解析\n\n### 关于 Ryan 的商业模式认知\n- Ryan 此前尝试过数据产品、模板工具、API 服务，但核心卡点是**获客**（不社交导致）\n- 出海站 + SEO 是当前唯一不需要社交的获客方式\n- 但对"慢"（3-6个月起步）有疑虑，需要持续跟进确认他是否真正接受\n\n## 飞书连接问题（2026-07-13/14）\n- 7月13日 Ryan 报告飞书消息收不到\n- 排查发现飞书消息没有进入 OpenClaw 日志\n- 7月14日 Ryan 重启 gateway 后恢复\n- 问题被戏称为"秀姑"（修复），核心矛盾：飞书本意是"不用开电脑"，但断了还得开电脑重启\n- 提案：配置飞书 WebSocket 健康检查 cron + 自动重启 gateway\n- 状态：待确认是否配置"}]"}]
+
+## Codex Skin Workshop 项目（2026-07-16）
+
+### 一日爆发：从 0 到 3 个仓库上线
+- 触发：看到 GitHub 上的 Codex-Dream-Skin 项目 → fork 改造 → 发布 → 搭市场站 → 测试修复，一天内完成
+
+### 上线项目
+- [Codex Skin Workshop](https://github.com/Ryan-J-MAX/Codex-Skin-Workshop) — Codex 换肤工具
+- [Claude Code Skin Workshop](https://github.com/Ryan-J-MAX/Claude-Code-Skin-Workshop) — Claude Code 换肤工具
+- [Codex 主题市场站](https://ryan-j-max.github.io/codex-skin-marketplace/) — GitHub Pages MVP，12 个主题
+
+### 产品形态
+- GitHub Pages 静态站 + GitHub Release 分发 + 一行命令安装
+- 灵感来自 Steam Wallpaper Engine
+- 变现路线：打赏 → 付费主题 → 创作者分成
+
+### 技术经验
+- GitHub Pages CDN 缓存顽固，用 raw.githubusercontent.com + 版本号绕缓存
+- Mac Gatekeeper 拦截未签名 .command 文件，需用户手动授权（无解）
+- 新版 Codex 集成到 ChatGPT.app 后 CDP 注入需要适配 DOM 变化
+
+### 当前状态
+- 安装工具链已跑通，Ryan 亲自测试过可用
+- UI 有黑色输入框问题（CSS 待适配）
+- 市场站体验仍在优化中
+
+### Ryan 行为模式观察
+- 极强的执行爆发力：从想法到产品上线，一路不卡顿
+- 口头禅："速度就是金钱"
+- 对用户体验敏感，反复追问直到流程顺畅
+- 试错驱动：遇到问题先试，试完再改
